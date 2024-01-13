@@ -1,0 +1,9 @@
+[
+    { "command": "ls", "description": "列出目录内容" },
+    { "command": "cd", "description": "改变目录" },
+    { "command": "c1", "description": "d1" },
+    { "command": "c2", "description": "d1" },
+    { "command": "c3", "description": "d1" }
+
+  ]
+  

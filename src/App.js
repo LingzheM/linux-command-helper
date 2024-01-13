@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './Home';
+import SearchResult from './SearchResult';
+import CommandDetail from './CommandDetails';
+import commandsData from './commands.json';
 
 function App() {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [results, setResults] = useState([]);
+
+  const handleSearch = () => {
+    const filteredResults = commandsData.filter(item =>
+      item.command.includes(searchTerm) || item.description.includes(searchTerm)
+    );
+    setResults(filteredResults);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/search" element={
+          <>
+            {/* 搜索界面 */}
+            <input 
+              type="text" 
+              placeholder="输入命令或描述" 
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)} 
+            />
+            <button onClick={handleSearch}>搜索</button>
+            <SearchResult results={results} />
+          </>
+        } />
+        <Route path="/command/:command" element={<CommandDetail />} />
+        <Route path="/placeholder" element={<div>其他功能（待实现）</div>} />
+      </Routes>
+    </Router>
+  );  
+
 }
 
 export default App;

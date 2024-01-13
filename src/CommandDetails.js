@@ -1,0 +1,30 @@
+import React from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import commandsData from './commands.json';
+
+
+const CommandDetail = () => {
+    let {command} = useParams();
+    let navigate = useNavigate();
+    let commandInfo = commandsData.find(cmd => cmd.command === command);
+
+    if (!commandInfo) {
+        return <p>命令未找到</p>;
+    }
+
+    const goBack = () => {
+        navigate(-1);
+    }
+
+    return (
+        <div>
+            <h2>{commandInfo.command}</h2>
+            <p>{commandInfo.description}</p>
+            {/* Todo 在这里你可以添加更多关于命令的详细信息，如使用示例等 */}
+            {/* 我们需要在 CommandDetail 组件中添加一个返回按钮。当用户点击这个按钮时，他们将被带回到之前的搜索结果页面。*/}
+            <button onClick={goBack}>返回</button>
+        </div>
+    )
+}
+
+export default CommandDetail;
