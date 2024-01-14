@@ -1,9 +1,84 @@
 [
-    { "command": "ls", "description": "列出目录内容" },
-    { "command": "cd", "description": "改变目录" },
-    { "command": "c1", "description": "d1" },
-    { "command": "c2", "description": "d1" },
-    { "command": "c3", "description": "d1" }
+    {
+        "command": "ls",
+        "description": "file and directory display",
+        "paramList": [
+            {
+                "param": "-a",
+                "declare": "all display",
+                "example": "ls -a currDir",
+                "type": "",
+                "default": null,
+                "required": false,
+                "subParams": []
+            }
+        ],
+        "relatedCommands": []
+    },
+    {
+        "command": "vi",
+        "description": "file and directory display",
+        "paramList": [
+            {
+                "param": "-a",
+                "declare": "all display",
+                "example": "ls -a currDir",
+                "type": "",
+                "default": null,
+                "required": false,
+                "subParams": []
+            }
+        ],
+        "relatedCommands": []
+    },
+    {
+        "command": "cat",
+        "description": "file and directory display",
+        "paramList": [
+            {
+                "param": "-a",
+                "declare": "all display",
+                "example": "ls -a currDir",
+                "type": "",
+                "default": null,
+                "required": false,
+                "subParams": []
+            }
+        ],
+        "relatedCommands": []
+    },
+    {
+        "command": "which",
+        "description": "file and directory display",
+        "paramList": [
+            {
+                "param": "-a",
+                "declare": "all display",
+                "example": "ls -a currDir",
+                "type": "",
+                "default": null,
+                "required": false,
+                "subParams": []
+            }
+        ],
+        "relatedCommands": []
+    },
+    {
+        "command": "whereis",
+        "description": "file and directory display",
+        "paramList": [
+            {
+                "param": "-a",
+                "declare": "all display",
+                "example": "ls -a currDir",
+                "type": "",
+                "default": null,
+                "required": false,
+                "subParams": []
+            }
+        ],
+        "relatedCommands": []
+    }
 
   ]
   

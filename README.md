@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# 基本紹介
+
+Reactに基づいて、簡単なプロファイルを作成したいと思います。
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
