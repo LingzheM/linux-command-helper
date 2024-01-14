@@ -3,9 +3,9 @@ import { useParams, useNavigate } from "react-router-dom";
 import commandsData from './commands.json';
 import CommandTree from "./CommandTree";
 
-
-const CommandDetail = ({ commandData }) => {
-    let {command} = useParams();
+// 在 CommandDetail 组件中，你不需要将 commandData 作为一个 prop。
+const CommandDetail = () => {
+    let { command } = useParams();
     let navigate = useNavigate();
     let commandInfo = commandsData.find(cmd => cmd.command === command);
 
@@ -17,11 +17,11 @@ const CommandDetail = ({ commandData }) => {
         navigate(-1);
     }
 
-    const formatDataForTree = (commandData) => {
-        console.log("commandData"+commandData);
+    const formatDataForTree = (commandInfo) => {
+        console.log("commandData"+commandInfo);
         let root = {
-            name: commandData.command,
-            children: commandData.paramList.map(param => {
+            name: commandInfo.command,
+            children: commandInfo.paramList.map(param => {
                 return {
                     name: param.param,
                     attributes: {
@@ -36,7 +36,7 @@ const CommandDetail = ({ commandData }) => {
         return [root];
     };
 
-    const treeData = formatDataForTree(commandData);
+    const treeData = formatDataForTree(commandInfo);
 
     return (
         <div>
