@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import 'antd/dist/antd.css'; // 或 'antd/dist/antd.less'
 import Home from './Home';
 import SearchResult from './SearchResult';
 import CommandDetail from './CommandDetails';
 import commandsData from './commands.json';
+import { Input, Button } from 'antd';
+
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -23,13 +26,25 @@ function App() {
         <Route path="/search" element={
           <>
             {/* 搜索界面 */}
-            <input 
+            <Input
+              placeholder="输入命令或描述"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              style={{ width: 200, marginRight: 10 }}
+            />
+            {/* <input 
               type="text" 
               placeholder="输入命令或描述" 
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)} 
-            />
-            <button onClick={handleSearch}>搜索</button>
+            /> */}
+            <button 
+              variant="contained"
+              color='primary'
+              onClick={handleSearch}
+            >
+            搜索
+            </button>
             <SearchResult results={results} />
           </>
         } />
