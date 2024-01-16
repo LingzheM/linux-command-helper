@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "topicId": "101",
+        "name": "System Architecture",
+        "sequences": [101.1, 101.2, 101.3]
+    },
+    {
+        "id": 1,
+        "topicId": "102",
+        "name": "Linux Installation and Package Management",
+        "sequences": []
+    },
+    {
+
+    }
+]

@@ -6,6 +6,7 @@ import SearchResult from './SearchResult';
 import CommandDetail from './CommandDetails';
 import commandsData from './commands.json';
 import { Input, Button } from 'antd';
+import { Layout } from 'antd';
 
 
 function App() {

@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "topicId": 101,
+        "sequenceId": "101.1",
+        "name": "Determine and configure hardware settings",
+        "weight": 2,
+        "descirption": "Candidates should be able to determine and configure fundamental system hardware.",
+        "keyArea": [
+            "Enable and disable integrated peripherals.",
+            "Differentiate between the various types of mass storage devices.",
+            "Determine hardware resources for devices.",
+            "Tools and utilities to list various hardware information (e.g. lsusb, lspci, etc.).            ",
+            "Tools and utilities to manipulate USB devices.",
+            "Conceptual understanding of sysfs, udev and dbus."
+        ],
+        "filesAndTermsAndUtilities": [
+            "/sys/",
+            "/proc/",
+            "/dev/",
+            "modprobe",
+            "lsmod",
+            "lspci",
+            "lsusb"
+        ]
+    },
+    {
+        "id": 2,
+        "topicId": 101,
+        "sequenceId": "101.2",
+        "name": "Boot the system",
+        "weight": 3,
+        "descirption": "Candidates should be able to guide the system through the booting process.",
+        "keyArea": [
+            "Provide common commands to the boot loader and options to the kernel at boot time.",
+            "Demonstrate knowledge of the boot sequence from BIOS/UEFI to boot completion.            ",
+            "Understanding of SysVinit and systemd.            ",
+            "Awareness of Upstart.",
+            "Check boot events in the log files."
+        ],
+        "filesAndTermsAndUtilities": [
+            "dmesg",
+            "journalctl",
+            "BIOS",
+            "UEFI",
+            "bootloader",
+            "initramfs",
+            "init",
+            "SysVinit",
+            "systemd"
+        ]
+    },
+    {
+
+    }
+]
