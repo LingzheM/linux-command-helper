@@ -13,7 +13,7 @@ const Home = () => {
   };
 
   const goToPlaceholder = () => {
-    navigate('/placeholder');
+    navigate('/topics');
   };
 
   return (

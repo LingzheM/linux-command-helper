@@ -7,7 +7,8 @@ import CommandDetail from './CommandDetails';
 import commandsData from './commands.json';
 import { Input, Button } from 'antd';
 import { Layout } from 'antd';
-
+import TopicList from './TopicList';
+import TopicDetail from './TopicDetail';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -24,6 +25,8 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path='/topics' element={< TopicList/>} />
+        <Route path='/topics/:topicId' element={<TopicDetail />} />
         <Route path="/search" element={
           <>
             {/* 搜索界面 */}
