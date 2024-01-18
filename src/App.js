@@ -5,10 +5,13 @@ import Home from './Home';
 import SearchResult from './SearchResult';
 import CommandDetail from './CommandDetails';
 import commandsData from './commands.json';
+import LinuxCommandData from './LinuxCommand.json';
 import { Input, Button } from 'antd';
 import { Layout } from 'antd';
 import TopicList from './TopicList';
 import TopicDetail from './TopicDetail';
+import SeqDetail from './SeqDetail';
+
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -27,6 +30,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path='/topics' element={< TopicList/>} />
         <Route path='/topics/:topicId' element={<TopicDetail />} />
+        <Route path="/seq/:seqId" element={<SeqDetail LinuxCommandData={LinuxCommandData} />} />
         <Route path="/search" element={
           <>
             {/* 搜索界面 */}
