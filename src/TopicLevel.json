@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "levelId": 101,
+        "levelName": 101
+    },
+    {
+        "id": 2,
+        "levelId": 102,
+        "levelName": 102
+    },
+    {
+        "id": 3,
+        "levelId": 201,
+        "levelName": 201
+    },
+    {
+        "id": 4,
+        "levelId": 202,
+        "levelName": 202
+    }
+]

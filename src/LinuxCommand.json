@@ -2,6 +2,7 @@
     {
         "id": 1,
         "topicId": 101,
+        "levelId": 101,
         "sequenceId": "101.1",
         "name": "Determine and configure hardware settings",
         "weight": 2,
@@ -27,6 +28,7 @@
     {
         "id": 2,
         "topicId": 101,
+        "levelId": 101,
         "sequenceId": "101.2",
         "name": "Boot the system",
         "weight": 3,

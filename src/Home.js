@@ -13,7 +13,7 @@ const Home = () => {
   };
 
   const goToPlaceholder = () => {
-    navigate('/topics');
+    navigate('/levels');
   };
 
   return (

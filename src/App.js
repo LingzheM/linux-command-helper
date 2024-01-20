@@ -10,7 +10,10 @@ import { Input, Button } from 'antd';
 import { Layout } from 'antd';
 import TopicList from './TopicList';
 import TopicDetail from './TopicDetail';
+import TopicLevel from './TopicLevel.json'
 import SeqDetail from './SeqDetail';
+import LevelList from './LevelList';
+import LevelDetail from './LevelDetail';
 
 
 function App() {
@@ -28,6 +31,8 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path='/levels' element={<LevelList levels={TopicLevel}/>}/>
+        <Route path='/levels/:levelId' element={<LevelDetail levelData={TopicLevel} topicData={LinuxCommandData} />} />
         <Route path='/topics' element={< TopicList/>} />
         <Route path='/topics/:topicId' element={<TopicDetail />} />
         <Route path="/seq/:seqId" element={<SeqDetail LinuxCommandData={LinuxCommandData} />} />
