@@ -1,0 +1,18 @@
+/* HeaderComponent.css */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1890ff;
+    color: white;
+    padding: 0 50px;
+}
+
+.header-title {
+    margin-right: 10px; /* 或者你可以根据需要调整这个值 */
+}
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+}
