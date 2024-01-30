@@ -7,7 +7,6 @@ import CommandDetail from './CommandDetails';
 import commandsData from './commands.json';
 import LinuxCommandData from './LinuxCommand.json';
 import { Input, Button } from 'antd';
-import { Layout } from 'antd';
 import TopicList from './TopicList';
 import TopicDetail from './TopicDetail';
 import TopicLevel from './TopicLevel.json'
@@ -19,12 +18,19 @@ import LevelDetail from './LevelDetail';
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [results, setResults] = useState([]);
+  const [selectedCommand, setSelectedCommand] = useState(null); // 新状态变量
 
-  const handleSearch = () => {
-    const filteredResults = commandsData.filter(item =>
-      item.command.includes(searchTerm) || item.description.includes(searchTerm)
-    );
+
+  const handleSearch = (commandName) => {
+    const filteredResults = commandsData.find(cmd => cmd.CommandName === commandName);
+    console.log("filter"+filteredResults)
     setResults(filteredResults);
+  };
+
+  const handleCommandClick = (commandName) => {
+    // 根据 commandName 找到对应的命令详情
+    const commandDetails = commandsData.find(cmd => cmd.CommandName === commandName);
+    setSelectedCommand(commandDetails);
   };
 
   return (
@@ -40,17 +46,11 @@ function App() {
           <>
             {/* 搜索界面 */}
             <Input
-              placeholder="输入命令或描述"
+              placeholder="输入命令"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               style={{ width: 200, marginRight: 10 }}
             />
-            {/* <input 
-              type="text" 
-              placeholder="输入命令或描述" 
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)} 
-            /> */}
             <button 
               variant="contained"
               color='primary'
@@ -58,11 +58,11 @@ function App() {
             >
             搜索
             </button>
-            <SearchResult results={results} />
+            <SearchResult results={results} onCommandClick={handleCommandClick} />
           </>
         } />
-        <Route path="/command/:command" element={<CommandDetail />} />
-        <Route path="/placeholder" element={<div>其他功能（待实现）</div>} />
+        <Route path="/command/:commandName" element={<CommandDetail />} />
+        <Route path="/placeholder" element={<div>其他</div>} />
       </Routes>
     </Router>
   );  

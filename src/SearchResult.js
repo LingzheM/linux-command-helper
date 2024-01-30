@@ -8,18 +8,30 @@ const SearchResult = ({results}) => {
     }
 
     return (
-        <ul>
-            {results.map((result, index)=>(
-                // 在这个更新后的 `SearchResult` 组件中，每个命令名称被一个 `Link` 组件包裹，这使得用户可以点击命令名称并导航到该命令的详情页面。
-                <li key={index}>
-                    <Link to={`/command/${result.command}`}>
-                        <h3>{result.command}</h3>
-                    </Link>
-                    <p>{result.description}</p>
-                </li>
+        <div>
+            {/* 渲染搜索结果 */}
+            {results.map(result => (
+                <div key={result.CommandID} >
+                    {result.CommandName}
+                </div>
             ))}
-        </ul>
+        </div>
     );
+  
+
+    // return (
+    //     <ul>
+    //         {results.map((result, index)=>(
+    //             // 在这个更新后的 `SearchResult` 组件中，每个命令名称被一个 `Link` 组件包裹，这使得用户可以点击命令名称并导航到该命令的详情页面。
+    //             <li key={index}>
+    //                 <Link to={`/command/${result.command}`}>
+    //                     <h3>{result.command}</h3>
+    //                 </Link>
+    //                 <p>{result.description}</p>
+    //             </li>
+    //         ))}
+    //     </ul>
+    // );
 };
 
 export default SearchResult;

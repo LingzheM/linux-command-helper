@@ -1,84 +1,314 @@
 [
     {
-        "command": "ls",
-        "description": "file and directory display",
-        "paramList": [
+        "CommandID": 1,
+        "CommandName": "cat",
+        "Description": "Concatenate and display files",
+        "Usage": "cat [OPTION] [FILE]...",
+        "Options": [
+            {   
+                "optionId": 1,
+                "Option": "-n",
+                "Description": "number all output lines",
+                "Example": "cat -n file"
+            },
             {
-                "param": "-a",
-                "declare": "all display",
-                "example": "ls -a currDir",
-                "type": "",
-                "default": null,
-                "required": false,
-                "subParams": []
+                "optionId": 2,
+                "Option": "-b",
+                "Description": "number nonempty output lines, overrides -n",
+                "Example": "cat -b file"
             }
         ],
-        "relatedCommands": []
+        "Category": "File Operations",
+        "Examples": [
+            "cat file1",
+            "cat file1 file2 > merged_file"
+        ],
+        "RelatedCommands": ["tac", "nl", "more", "less"],
+        "Tags": ["file", "display", "concatenate"],
+        "VersionAdded": "V7 Unix",
+        "Source": "https://man7.org/linux/man-pages/man1/cat.1.html",
+        "LastUpdated": "2024-01-30"
     },
     {
-        "command": "vi",
-        "description": "file and directory display",
-        "paramList": [
+        "CommandID": 2,
+        "CommandName": "vi",
+        "Description": "Text editor",
+        "Usage": "vi [OPTION] [FILE]...",
+        "Options": [
             {
-                "param": "-a",
-                "declare": "all display",
-                "example": "ls -a currDir",
-                "type": "",
-                "default": null,
-                "required": false,
-                "subParams": []
+                "Option": "-r",
+                "Description": "Recover a file from a crash",
+                "Example": "vi -r file"
+            },
+            {
+                "Option": "-R",
+                "Description": "Open file in read-only mode",
+                "Example": "vi -R file"
             }
         ],
-        "relatedCommands": []
+        "Category": "File Operations",
+        "Examples": [
+            "vi file",
+            "vi +20 file"
+        ],
+        "RelatedCommands": ["vim", "nano", "emacs"],
+        "Tags": ["editor", "text", "file"],
+        "VersionAdded": "1.0",
+        "Source": "https://www.vim.org/",
+        "LastUpdated": "2024-01-30"
     },
     {
-        "command": "cat",
-        "description": "file and directory display",
-        "paramList": [
+        "CommandID": 3,
+        "CommandName": "apt-get",
+        "Description": "APT package handling utility",
+        "Usage": "apt-get [options] command",
+        "Options": [
             {
-                "param": "-a",
-                "declare": "all display",
-                "example": "ls -a currDir",
-                "type": "",
-                "default": null,
-                "required": false,
-                "subParams": []
+                "Option": "install",
+                "Description": "Install new packages",
+                "Example": "apt-get install package_name"
+            },
+            {
+                "Option": "remove",
+                "Description": "Remove packages",
+                "Example": "apt-get remove package_name"
             }
         ],
-        "relatedCommands": []
+        "Category": "Package Management",
+        "Examples": [
+            "apt-get update",
+            "apt-get upgrade"
+        ],
+        "RelatedCommands": ["apt", "dpkg", "apt-cache"],
+        "Tags": ["package", "install", "update"],
+        "VersionAdded": "Debian 0.5.4",
+        "Source": "https://man7.org/linux/man-pages/man8/apt-get.8.html",
+        "LastUpdated": "2024-01-30"
     },
     {
-        "command": "which",
-        "description": "file and directory display",
-        "paramList": [
+        "CommandID": 4,
+        "CommandName": "apt-cache",
+        "Description": "Query the APT cache",
+        "Usage": "apt-cache [options] command",
+        "Options": [
             {
-                "param": "-a",
-                "declare": "all display",
-                "example": "ls -a currDir",
-                "type": "",
-                "default": null,
-                "required": false,
-                "subParams": []
+                "Option": "search",
+                "Description": "Search the package cache for a given pattern",
+                "Example": "apt-cache search package_name"
+            },
+            {
+                "Option": "show",
+                "Description": "Show package details",
+                "Example": "apt-cache show package_name"
             }
         ],
-        "relatedCommands": []
+        "Category": "Package Management",
+        "Examples": [
+            "apt-cache stats",
+            "apt-cache depends package_name"
+        ],
+        "RelatedCommands": ["apt-get", "apt", "dpkg"],
+        "Tags": ["package", "cache", "search"],
+        "VersionAdded": "Debian 0.5.4",
+        "Source": "https://man7.org/linux/man-pages/man8/apt-cache.8.html",
+        "LastUpdated": "2024-01-30"
     },
     {
-        "command": "whereis",
-        "description": "file and directory display",
-        "paramList": [
+        "CommandID": 5,
+        "CommandName": "dpkg",
+        "Description": "Debian package management system",
+        "Usage": "dpkg [option...] action",
+        "Options": [
             {
-                "param": "-a",
-                "declare": "all display",
-                "example": "ls -a currDir",
-                "type": "",
-                "default": null,
-                "required": false,
-                "subParams": []
+                "Option": "-i",
+                "Description": "Install the package",
+                "Example": "dpkg -i package_file.deb"
+            },
+            {
+                "Option": "-r",
+                "Description": "Remove the package",
+                "Example": "dpkg -r package_name"
             }
         ],
-        "relatedCommands": []
+        "Category": "Package Management",
+        "Examples": [
+            "dpkg -l",
+            "dpkg --configure package_name"
+        ],
+        "RelatedCommands": ["apt-get", "apt", "apt-cache"],
+        "Tags": ["package", "dpkg", "debian"],
+        "VersionAdded": "Debian 0.93.6",
+        "Source": "https://man7.org/linux/man-pages/man1/dpkg.1.html",
+        "LastUpdated": "2024-01-30"
+    },
+    {
+        "CommandID": 6,
+        "CommandName": "docker",
+        "Description": "Manage Docker containers",
+        "Usage": "docker [OPTIONS] COMMAND [ARG...]",
+        "Options": [
+            {
+                "Option": "run",
+                "Description": "Run a command in a new container",
+                "Example": "docker run image_name"
+            },
+            {
+                "Option": "ps",
+                "Description": "List containers",
+                "Example": "docker ps"
+            }
+        ],
+        "Category": "Container Management",
+        "Examples": [
+            "docker build -t my_image .",
+            "docker exec -it container_name /bin/bash"
+        ],
+        "RelatedCommands": ["docker-compose", "kubectl", "podman"],
+        "Tags": ["container", "docker", "devops"],
+        "VersionAdded": "1.3",
+        "Source": "https://docs.docker.com/engine/reference/run/",
+        "LastUpdated": "2024-01-30"
+    },
+    {
+        "CommandID": 7,
+        "CommandName": "top",
+        "Description": "Display Linux processes",
+        "Usage": "top [options]",
+        "Options": [
+            {
+                "Option": "-u",
+                "Description": "Display processes of a user",
+                "Example": "top -u username"
+            },
+            {
+                "Option": "-i",
+                "Description": "Do not show idle tasks",
+                "Example": "top -i"
+            }
+        ],
+        "Category": "System Monitoring",
+        "Examples": [
+            "top",
+            "top -n 1"
+        ],
+        "RelatedCommands": ["htop", "atop", "ps"],
+        "Tags": ["process", "monitoring", "system"],
+        "VersionAdded": "procps version 1",
+        "Source": "https://man7.org/linux/man-pages/man1/top.1.html",
+        "LastUpdated": "2024-01-30"
+    },
+    {
+        "CommandID": 8,
+        "CommandName": "ps",
+        "Description": "Report a snapshot of current processes",
+        "Usage": "ps [options]",
+        "Options": [
+            {
+                "Option": "-e",
+                "Description": "Select all processes",
+                "Example": "ps -e"
+            },
+            {
+                "Option": "-f",
+                "Description": "Do full-format listing",
+                "Example": "ps -f"
+            }
+        ],
+        "Category": "System Monitoring",
+        "Examples": [
+            "ps aux",
+            "ps -ef"
+        ],
+        "RelatedCommands": ["top", "htop", "pgrep"],
+        "Tags": ["process", "snapshot", "system"],
+        "VersionAdded": "AT&T UNIX System V",
+        "Source": "https://man7.org/linux/man-pages/man1/ps.1.html",
+        "LastUpdated": "2024-01-30"
+    },
+    {
+        "CommandID": 9,
+        "CommandName": "grep",
+        "Description": "Print lines matching a pattern",
+        "Usage": "grep [OPTION]... PATTERN [FILE]...",
+        "Options": [
+            {
+                "Option": "-i",
+                "Description": "Ignore case distinctions",
+                "Example": "grep -i pattern file"
+            },
+            {
+                "Option": "-v",
+                "Description": "Invert the sense of matching",
+                "Example": "grep -v pattern file"
+            }
+        ],
+        "Category": "Text Processing",
+        "Examples": [
+            "grep 'word' filename",
+            "grep -r 'word' ."
+        ],
+        "RelatedCommands": ["egrep", "fgrep", "sed"],
+        "Tags": ["search", "pattern", "text"],
+        "VersionAdded": "Unix 6th Edition",
+        "Source": "https://man7.org/linux/man-pages/man1/grep.1.html",
+        "LastUpdated": "2024-01-30"
+    },
+    {
+        "CommandID": 10,
+        "CommandName": "sed",
+        "Description": "Stream editor for filtering and transforming text",
+        "Usage": "sed [OPTION]... {script-only-if-no-other-script} [input-file]...",
+        "Options": [
+            {
+                "Option": "-e",
+                "Description": "Add the script to the commands to be executed",
+                "Example": "sed -e 's/test/tested/' file"
+            },
+            {
+                "Option": "-i",
+                "Description": "Edit files in-place",
+                "Example": "sed -i 's/test/tested/' file"
+            }
+        ],
+        "Category": "Text Processing",
+        "Examples": [
+            "sed 's/foo/bar/' file",
+            "sed -n '1,5p' file"
+        ],
+        "RelatedCommands": ["awk", "grep", "tr"],
+        "Tags": ["stream", "edit", "text"],
+        "VersionAdded": "Unix 7th Edition",
+        "Source": "https://man7.org/linux/man-pages/man1/sed.1.html",
+        "LastUpdated": "2024-01-30"
+    },
+    {
+        "CommandID": 11,
+        "CommandName": "ls",
+        "Description": "List directory contents",
+        "Usage": "ls [options] [directory]",
+        "Options": [
+            {
+                "Option": "-l",
+                "Description": "use a long listing format",
+                "Example": "ls -l"
+            },
+            {
+                "Option": "-a",
+                "Description": "include directory entries whose names begin with a dot (.).",
+                "Example": "ls -a"
+            }
+        ],
+        "Category": "File Operations",
+        "Examples": [
+            "ls -la /home",
+            "ls --color=auto"
+        ],
+        "RelatedCommands": ["dir", "vdir"],
+        "Tags": ["listing", "directory", "file"],
+        "VersionAdded": "V1.0",
+        "Source": "https://man7.org/linux/man-pages/man1/ls.1.html",
+        "LastUpdated": "2023-01-13"
     }
+]
 
-  ]
   
